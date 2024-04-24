@@ -2,11 +2,11 @@
 
 > :warning: This solution, offered by the Open-Source community, will no longer receive contributions from Microsoft.
 
-The Azurecaf provider is a *logical provider* which means that it works entirely within Terraform's logic, and doesn't interact with any other services. The goal of this provider is to provider helper methods in implementing Azure landing zones using Terraform.
+The Azurecaf provider is a *logical provider* which means that it works entirely within Terraform's logic, and doesn't interact with any other services. The goal of this provider is to provide helper methods in implementing Azure landing zones using Terraform.
 
-The Azurecaf provider currently contains a two resources based on the Terraform Random_string provider. The naming_convention resources enforce is the first iteration of our naming convention implementation enforcing Azure Cloud Adoption Framework naming convention.
+The Azurecaf provider currently contains two resources based on the Terraform Random_string provider. The naming_convention resource enforces the first iteration of our naming convention implementation, enforcing Azure Cloud Adoption Framework naming conventions.
 
-As per the growing number of azure resources a new implementation is now available using the azurecaf_name resource to avoid breaking changes. The new implementation supports an extensive list of resource types and will be updated on a regular basis as new services are released
+As per the growing number of azure resources a new implementation is now available using the azurecaf_name resource to avoid breaking changes. The new implementation supports an extensive list of resource types and will be updated on a regular basis as new services are released.
 
 ## Resource types
 

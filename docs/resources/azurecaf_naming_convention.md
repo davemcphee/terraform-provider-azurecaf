@@ -2,7 +2,7 @@
 
 The resource naming_convention implements a set of methodologies to apply consistent resource naming using the default Microsoft Cloud Adoption Framework for Azure recommendations as per https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging.
 
-The naming_convention is the initial resource released as part of the azurecaf provider, the naming_convention supports a fixed set of resources as described in the documention. In order to provider more flexibility and support the large breadth of Azure resources available you can use the azurecaf_name resource.
+The naming_convention is the initial resource released as part of the azurecaf provider, which supports a fixed set of resources as described in the documentation. In order to provider more flexibility and to support the large breadth of Azure resources available, you can use the azurecaf_name resource.
 
 ## Example usage
 This example outputs one name, the result of the naming convention query. The result attribute returns the name based on the convention and parameters input.
@@ -24,11 +24,10 @@ resource "azurerm_resource_group" "cafrandom" {
   name     = azurecaf_naming_convention.cafrandom_rg.result
   location = "southeastasia"
 }
-
+```
 
 The provider generates a name using the input parameters and automatically appends a prefix (if defined), a caf prefix (resource type) and postfix (if defined) in addition to a generated padding string based on the selected naming convention.
 
-```
 The example above would generate a name using the pattern [prefix]-[cafprefix]-[name]-[postfix]-[padding]:
 
 ```
@@ -39,12 +38,12 @@ dev-aztfmod-rg-001-wxyz
 
 The following arguments are supported:
 
-* name - (optional) the basename of the resource to create, the basename will be sanitized as per supported character set in Azure.
-* convention (optional) - one of the four naming convention supported. Defaults to cafrandom. Allowed values are cafclassic, cafrandom, random, passthrough
-* prefix (optional) - prefix to append as the first characters of the generated name
-* postfix (optional) -  additional postfix added after the basename, this is can be used to append resource index (eg. vm-001)
-* max_length (optional) - configure the maximum length of the returned object name, is the specified length is longer than the supported length of the Azure resource the later applies
-* resource_type (optional) -  describes the type of azure resource you are requesting a name from (eg. azure container registry: acr). See the Resource Type section
+* name (optional) - the basename of the resource to create. The basename will be sanitized as per supported character set in Azure.
+* convention (optional) - one of the four naming convention supported. Defaults to cafrandom. Allowed values are cafclassic, cafrandom, random, and passthrough.
+* prefix (optional) - prefix to append as the first characters of the generated name.
+* postfix (optional) -  additional postfix added after the basename, this can be used to append resource index (e.g. vm-001).
+* max_length (optional) - configure the maximum length of the returned object name. Is the specified length is longer than the supported length of the Azure resource the latter applies.
+* resource_type (optional) -  describes the type of azure resource you are requesting a name from (e.g. azure container registry: acr). See the Resource Type section.
 
 # Attributes Reference
 The following attributes are exported:
