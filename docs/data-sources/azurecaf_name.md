@@ -1,6 +1,6 @@
 # azurecaf_name
 
-The data source azurecaf_name generates a name for a resource (recommended way as data sources are evaluated before resources got created).
+The data source azurecaf_name generates a name for a resource (recommended way as data sources are evaluated before resources are created).
 
 The azurecaf_name resource allows you to:
 
